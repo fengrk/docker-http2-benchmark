@@ -18,4 +18,11 @@ chmod +x create_ssl.sh
 
 ### 1.2 搭建 http2 服务环境
 
+```
+cd server
+mkdir -p log
+docker-compose up -d
+```
+
+
 
