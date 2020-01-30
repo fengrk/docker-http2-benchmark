@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+    localhost-nginx:
+        image: nginx
+        restart: always
+        ports:
+            - "127.0.0.1:80:80"
+            - "127.0.0.1:443:443"
+        volumes:
+            - "./conf/nginx_setting:/etc/nginx/nginx.conf:ro"
+            - "./log:/var/log/nginx"
+            - "./html:/html/"
+            - "../ssl/localhost.key:/etc/nginx/cert/localhost.key"
+            - "../ssl/localhost.crt:/etc/nginx/cert/localhost.crt"
+        environment:
+            TZ: Asia/Shanghai
